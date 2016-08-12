@@ -1,0 +1,83 @@
+int RREG=5;
+int RRD=6;
+int RFD=7;
+int LREG=10;
+int RRD=8;
+int RFD=9;
+
+void setup()
+{
+pinMode(RREG,OUTPUT);
+pinMode(LREG,OUTPUT);
+pinMode(RFD,OUTPUT);
+pinMode(RRD,OUTPUT);
+digitalWrite(RREG,HIGH);
+pinMode(LFD,OUTPUT);
+pinMode(LRD,OUTPUT);
+digitalWrite(LREG,HIGH);
+}
+
+/*FWD*/
+void_fwd()
+{
+digitalWrite(LFD,HIGH);
+digitalWrite(RFD,HIGH);
+digitalWrite(LRD,LOW);
+digitalWrite(RRD,LOW);
+}
+
+/*BRK*/
+void_brk()
+{
+digitalWrite(LFD,LOW);
+digitalWrite(RFD,LOW);
+digitalWrite(LRD,LOW);
+digitalWrite(RRD,LOW);
+}
+
+/*BWD*/
+void_bwd()
+{
+digitalWrite(LRD,HIGH);
+digitalWrite(RRD,HIGH);
+digitalWrite(LFD,LOW);
+digitalWrite(RFD,LOW);
+}
+
+/*RGT*/
+void_rgt()
+{
+digitalWrite(LFD,HIGH);
+digitalWrite(RFD,LOW);
+digitalWrite(LRD,LOW);
+digitalWrite(RRD,HIGH);
+}
+
+/*LFT*/
+void_lft()
+{
+digitalWrite(LFD,LOW);
+digitalWrite(RFD,HIGH);
+digitalWrite(LRD,LOW);
+digitalWrite(RRD,LOW);
+}
+
+void loop()
+{
+fwd();
+delay(400);
+brk();
+delay(400);
+bwd();
+delay(400);
+brk();
+delay(400);
+lft();
+delay(400);
+brk();
+delay(400);
+rgt();
+delay(400);
+brk();
+delay(400);
+}
